@@ -1,11 +1,16 @@
 import './App.css';
-import Navbar from "./Navbar";
+import Navbar from "./components/Navbar.jsx";
+import Title from "./components/Title.jsx";
+import Body from "./components/Body.jsx";
+import Footer from "./components/Footer.jsx";
+
 const App = () => {
   return (
+    <>
     <div className="App">
-      <Navbar></Navbar>
-    <h1>Hola LAURA !! </h1> 
+      <Navbar/><Title/><Body/><Footer/>
     </div>
+    </>
   );
 }
 
