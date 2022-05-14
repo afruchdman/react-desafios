@@ -19,7 +19,7 @@ const Navbar = () => {
                   </li> 
                 </ul>
               </div>
-              <div>
+              <div> 
                 < ul className="navbar-nav me-auto mb-2 mb-lg-0">
                   <li className="nav-item"><CartWidget/></li>
                   <li><span> </span> </li>
