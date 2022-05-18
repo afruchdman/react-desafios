@@ -3,7 +3,7 @@ import ItemListContainer from "./ItemListContainer.jsx";
 const Body = () => {
         return (
         <>
-          <ItemListContainer mesage="Hola Laura!"/>
+          <ItemListContainer mesage="Hola Laura! a mi 'Desafío: Contador con botón '"/>
           <div class="container-xxl">
             <div class="row">
               <div class="col-xxl">
