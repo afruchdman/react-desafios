@@ -1,32 +1,32 @@
-import {  useState } from 'react';
-import CartWidget from './CartWidget';
-
+//Este componente tiene los botones para agregar o quitar el producto a la compra
+import React, {useState} from 'react';
+import { Button } from 'react-bootstrap';
+import { ButtonGroup } from 'react-bootstrap';
 
 const ItemCount = ( {stock = 0, initial = 1,  onAdd }) => {
     const [contador, setcontador] = useState(0);
 
     //funcion para incrementar contador
-    const sumarproducto =()=>{
-        if (contador<stock) {setcontador(contador+1)}  
-    }
+    const sumarproducto =()=>{contador<stock && setcontador(contador+1)}
     //funcion para decrementar contador
-    const restarproducto =()=>{
-        if(contador>=initial) {setcontador(contador-1)}
-    }
-    
+    const restarproducto =()=>{contador>=initial&&setcontador(contador-1)}
+    //Esto esta a la espera de la clase para agregar el producto al carrito general de la pagina.
      onAdd = (cantidad)=>{
          console.log(cantidad);
     }
 
     return (
       <>
-      <div class="btn-group me-1">
-          <a href="#" class="btn btn-primary" onClick={sumarproducto}>+</a>
-          <a href="#" class="btn btn-primary"onClick={restarproducto}>-</a>
-      </div>
-      <div class="btn-group">
-          <a href="#" class="btn btn-primary active" aria-current="page" onClick={() => onAdd(contador)} >Agregar al carrito <span className="Balloon">{contador}</span> productos</a>
-      </div>
+        <ButtonGroup size="sm">
+            {stock===0&&<Button disabled variant="outline-primary" size="sm" onClick={sumarproducto}>+</Button>}
+            {stock!==0&&<Button variant="outline-primary" size="sm" onClick={sumarproducto}>+</Button>}
+            {stock===0?<span color='red'>&nbsp;sin stock&nbsp;</span>:<span>&nbsp;{contador}&nbsp;</span>}        
+            {stock===0&&<Button disabled variant="outline-primary" size="sm" onClick={restarproducto}>-</Button>}
+            {stock!==0&&<Button variant="outline-primary" size="sm" onClick={restarproducto}>-</Button>}
+        </ButtonGroup>
+        <ButtonGroup size="sm">
+            <Button variant="outline-primary" size="lg" onClick={() => onAdd(contador)}>Agregar al carrito</Button>
+        </ButtonGroup>
       </>    
     );
 }

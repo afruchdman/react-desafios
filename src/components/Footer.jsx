@@ -1,3 +1,4 @@
+//Componenete de pie de pagina
 const Footer = () => {
         return (
         <>

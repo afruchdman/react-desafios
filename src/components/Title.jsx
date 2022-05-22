@@ -1,7 +1,8 @@
+//componenete de Titulo principal
 const Title = () => {
         return (
             <>
-            <h1 class="h1 animate__animated animate__pulse  p-1 border-bottom">TITULO</h1>
+            <h1 className="h1 animate__animated animate__pulse  p-1 border-bottom">EL ALMACEN de la LIMPIEZA</h1>
             </>
         );
     } 
