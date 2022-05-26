@@ -1,11 +1,14 @@
 import ItemListContainer from "./ItemListContainer.jsx";
+import ItemDetailContainer from "./ItemDetailContainer.jsx";
+
 import Title from "./Title.jsx";
 
 const Body = () => {
         return (
         <>
         <Title/>
-        <ItemListContainer mesage="Listado de productos"/>
+        {/*<ItemListContainer mesage={"Nuestros productos"}/>*/}
+        <ItemDetailContainer/>
         </>
         ); 
     } 

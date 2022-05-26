@@ -11,7 +11,8 @@ const Item = ({producto}) => {
         <p className="card-text h4">{name}</p>
         <p className="card-text">{description}</p>
     </div>
-    <ItemCount stock={stock} initial={1} onAdd={'onAdd'}/>
+    {stock === 0 ? <p>Lo sentimos, no hay stock disponible</p> : 
+    <ItemCount stock={stock} initial={1} onAdd={'onAdd'}/>}
 </div>
   )
 }

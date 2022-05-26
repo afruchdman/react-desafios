@@ -20,7 +20,7 @@ const ItemCount = ( {stock = 0, initial = 1,  onAdd }) => {
         <ButtonGroup size="sm">
             {stock===0&&<Button disabled variant="outline-primary" size="sm" onClick={sumarproducto}>+</Button>}
             {stock!==0&&<Button variant="outline-primary" size="sm" onClick={sumarproducto}>+</Button>}
-            {stock===0?<span color='red'>&nbsp;sin stock&nbsp;</span>:<span>&nbsp;{contador}&nbsp;</span>}        
+            {stock===0?<span color='red bold'>&nbsp;sin stock&nbsp;</span>:<span>&nbsp;{contador}&nbsp;</span>}        
             {stock===0&&<Button disabled variant="outline-primary" size="sm" onClick={restarproducto}>-</Button>}
             {stock!==0&&<Button variant="outline-primary" size="sm" onClick={restarproducto}>-</Button>}
         </ButtonGroup>
