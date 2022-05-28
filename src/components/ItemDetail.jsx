@@ -3,7 +3,7 @@ import {Card } from 'react-bootstrap';
 
 
 const ItemDetail = ({ item }) => {
-
+console.log(item);
 
     return (
             <>
