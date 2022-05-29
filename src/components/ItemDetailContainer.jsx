@@ -2,24 +2,26 @@
 import {  useState , useEffect} from 'react';
 import { miPromesa } from "../mocks/productos.js";
 import ItemDetail from "./ItemDetail.jsx";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
     
-    const [miProductos,setmiProductos] = useState([])
-    const [miError,setmiError] = useState(false)
-
+    const [miProducto,setmiProducto] = useState({})
+    const [miError,setmiError] = useState(null)
+    const {id} = useParams();
     
     useEffect(()=>{
         miPromesa
-        .then((res)=>setmiProductos(res[3]))
-        .catch((error)=>setmiError(true))
+        .then((res)=> id ? setmiProducto(res.find(item=>item.id===parseInt(id))):setmiProducto(res))
+        .catch(()=>setmiError(true))
     },[]
     )
 
-    function retorno (){
-        return miError?<h2 style={{color:'red'}}>Se ha producido un Error</h2>
-        :<ItemDetail item={miProductos}/>}
-
-        return (retorno());
-} 
+        return (
+            <>
+            {miError?<h2 style={{color:'red'}}>Se ha producido un Error</h2>
+            :<ItemDetail item={miProducto}/>}
+            </>
+        )
+}
 export default ItemDetailContainer;
