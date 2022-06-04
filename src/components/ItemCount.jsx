@@ -11,9 +11,7 @@ const ItemCount = ( {stock = 0, initial = 1,  onAdd }) => {
     //funcion para decrementar contador
     const restarproducto =()=>{contador>=initial&&setcontador(contador-1)}
     //Esto esta a la espera de la clase para agregar el producto al carrito general de la pagina.
-     onAdd = (cantidad)=>{
-         console.log(cantidad);
-    }
+    //onAdd = (cantidad)=>{console.log(cantidad);}
 
     return (
       <>

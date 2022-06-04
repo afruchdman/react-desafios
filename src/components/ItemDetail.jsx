@@ -1,9 +1,21 @@
 import ItemCount from './ItemCount';
 import {Card } from 'react-bootstrap';
+import { useState } from 'react';
+import { Button } from 'react-bootstrap';
+import { Link } from "react-router-dom";
+
+
 
 
 const ItemDetail = ({ item }) => {
 
+    const [itemCount,setItemCount]=useState(0)
+    
+    const onAdd =(qty)=>{
+        //console.log("valor de qty="+qty);
+        alert("valor de qty="+qty);
+        setItemCount(qty);
+    }
 
     return (
             <>
@@ -13,8 +25,12 @@ const ItemDetail = ({ item }) => {
             <Card.Body>
                 <Card.Title>{item.name}</Card.Title>
                 <Card.Text>{item.description}</Card.Text>
-                {item.stock === 0 ? <p>Lo sentimos, no hay stock disponible</p> : 
-                <ItemCount stock={item.stock} initial={1} onAdd={'onAdd'}/>}
+                {
+                item.stock === 0 ? <p>Lo sentimos, no hay stock disponible</p> : 
+                itemCount===0
+                ?<ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd}/>
+                :<Link to='/cart'><Button variant="success" size="lg">CheckOut!</Button></Link>
+                }
             </Card.Body>
             </Card>
             </center>
