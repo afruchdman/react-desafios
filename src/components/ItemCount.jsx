@@ -3,13 +3,13 @@ import React, {useState} from 'react';
 import { Button } from 'react-bootstrap';
 import { ButtonGroup } from 'react-bootstrap';
 
-const ItemCount = ( {stock = 0, initial = 1,  onAdd }) => {
-    const [contador, setcontador] = useState(0);
+const ItemCount = ( {stock = 0, contador ,  setContador , onAdd}) => {
+//    const [contador, setcontador] = useState(0);
 
     //funcion para incrementar contador
-    const sumarproducto =()=>{contador<stock && setcontador(contador+1)}
+    const sumarproducto =()=>{contador<stock && setContador(contador+1)}
     //funcion para decrementar contador
-    const restarproducto =()=>{contador>=initial&&setcontador(contador-1)}
+    const restarproducto =()=>{contador>0&&setContador(contador-1)}
     //Esto esta a la espera de la clase para agregar el producto al carrito general de la pagina.
     //onAdd = (cantidad)=>{console.log(cantidad);}
 

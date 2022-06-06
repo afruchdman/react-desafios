@@ -9,6 +9,7 @@ const ItemDetail = ({ item }) => {
 
     const [itemCount,setItemCount]=useState(0)
     const {addToCart} = useContext(CartContext)
+    const [contador, setContador] = useState(0);
 
     const onAdd =(qty)=>{
         //console.log("valor de qty="+qty);
@@ -27,9 +28,11 @@ const ItemDetail = ({ item }) => {
                 {
                 item.stock === 0 ? <p>Lo sentimos, no hay stock disponible</p> : 
                 itemCount===0
-                ?<ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd}/>
-                :<Link to='/cart'><Button variant="success" size="lg">CheckOut!</Button></Link>
-                }
+                ?<ItemCount stock={item.stock} contador={contador} setContador={setContador} onAdd={onAdd}/>
+                :<>
+                    <Link to='/cart'><Button variant="success" size="lg">Ir al Carrito!</Button></Link>
+                    <Link to='/'><Button variant="success" size="lg">Seguir comprando</Button></Link>
+                </>}
             </Card.Body>
             </Card>
             </center>
