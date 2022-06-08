@@ -5,7 +5,6 @@ import { ButtonGroup } from 'react-bootstrap';
 
 const ItemCount = ( {stock = 0, contador ,  setContador , onAdd}) => {
 //    const [contador, setcontador] = useState(0);
-
     //funcion para incrementar contador
     const sumarproducto =()=>{contador<stock && setContador(contador+1)}
     //funcion para decrementar contador
