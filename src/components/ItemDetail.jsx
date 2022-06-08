@@ -1,21 +1,20 @@
 import ItemCount from './ItemCount';
 import {Card } from 'react-bootstrap';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
-
-
-
+import { CartContext } from './CartContext';
 
 const ItemDetail = ({ item }) => {
 
     const [itemCount,setItemCount]=useState(0)
+    const {addToCart} = useContext(CartContext)
     const [contador, setContador] = useState(0);
 
     const onAdd =(qty)=>{
         //console.log("valor de qty="+qty);
-        alert("valor de qty="+qty);
         setItemCount(qty);
+        addToCart(item,qty);
     }
 
     return (

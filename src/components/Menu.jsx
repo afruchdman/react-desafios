@@ -11,7 +11,7 @@ const Menu = () => {
               <button className="btn btn-sm btn-outline-success me-2" type="button"><Link to="/">INICIO</Link></button>
               <button className="btn btn-sm btn-outline-success me-2" type="button"><Link to="/category/1">LIMPIEZA</Link></button>
               <button className="btn btn-sm btn-outline-success me-2" type="button"><Link to="/category/2">PERFUMERIA</Link></button>
-              <button className="btn btn-sm btn-outline-success me-2" type="button"><CartWidget/></button>
+              <button className="btn btn-sm btn-outline-success me-2" type="button"><Link to="/cart"><CartWidget/></Link></button>
             </form>
           </nav>
           </>
