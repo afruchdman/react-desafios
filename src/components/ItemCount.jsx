@@ -1,5 +1,5 @@
 //Este componente tiene los botones para agregar o quitar el producto a la compra
-import React, {useState} from 'react';
+import React from 'react';
 import { Button } from 'react-bootstrap';
 import { ButtonGroup } from 'react-bootstrap';
 

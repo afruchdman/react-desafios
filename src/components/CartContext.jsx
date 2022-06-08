@@ -6,8 +6,8 @@ const CartContextProvider = ({children}) => {
 
     //funcion para agregar carrito
     const addToCart = (item,cantidad)=>{
-        let found = cartList.find( el=>el.id == (item.id));
-        if(found==undefined){found=-1}
+        let found = cartList.find( el=>el.id === (item.id));
+        if(found===undefined){found=-1}
 
         const findDuplicated = (found,cartList) =>{
             cartList.forEach(element => {
@@ -15,7 +15,7 @@ const CartContextProvider = ({children}) => {
                 else {return element.cantidad}                
             });
         }
-        if (isInCart(item.id)!=-1){findDuplicated(found,cartList)}else{item.cantidad=cantidad;setCartList([...cartList,item])};
+        if (isInCart(item.id)!==-1){findDuplicated(found,cartList)}else{item.cantidad=cantidad;setCartList([...cartList,item])};
     }    
 
 //funcion para vaciar carrito
@@ -31,8 +31,8 @@ setCartList(nuevoCarrito)
 }
 
 const isInCart = (id) =>{
-    let found = cartList.find( el=>el.id == (id));
-    if(found==undefined){found=-1}
+    let found = cartList.find( el=>el.id === (id));
+    if(found===undefined){found=-1}
 return found}
 
     return (

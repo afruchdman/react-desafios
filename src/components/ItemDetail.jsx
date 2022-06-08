@@ -31,7 +31,7 @@ const ItemDetail = ({ item }) => {
                 ?<ItemCount stock={item.stock} contador={contador} setContador={setContador} onAdd={onAdd}/>
                 :<>
                     <Link to='/cart'><Button variant="success" size="lg">Ir al Carrito!</Button></Link>
-                    <Link to='/'><Button variant="success" size="lg">Seguir comprando</Button></Link>
+                    <Link to='/'><Button variant="info" size="lg">Seguir comprando</Button></Link>
                 </>}
             </Card.Body>
             </Card>
