@@ -16,7 +16,7 @@ const localClearCart=()=>{clearCart()}
         <>
             <h2 className="h4">Subtotal: {calcsubtotal()}</h2>
             <h2 className="h4">Impuestos: {calcimpuestos()}</h2>
-            <h2 className="h2">TOTAL: {calcTotalFinal()}</h2>
+            <h2 className="h2" style={{ color: 'red' }}>TOTAL: {calcTotalFinal()}</h2>
             <p><Button onClick={localClearCart}>Limpiar Carrito</Button></p>
             <CartItem Item={cartList}></CartItem>
             <br/>
