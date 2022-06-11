@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 
 const Item = ({producto}) => {
-  const {name, img, description, stock,id} = producto
+  const {name, img, description, stock,id,precio} = producto
   return (
     <>
     
@@ -15,6 +15,7 @@ const Item = ({producto}) => {
     <div className="card-body">
         <p className="card-text h4"><Link to={`/item/${id}`}>{name}</Link></p>
         <p className="card-text">{description}</p>
+        <p className="card-text">Precio unitario $:{precio}ARS</p>
         <ul className="list-group list-group-flush">
           {stock === 0 ? <li className="list-group-item">Lo sentimos, no hay stock disponible</li> :
           <li className="list-group-item" >stock disponible {stock}</li>}

@@ -25,6 +25,7 @@ const ItemDetail = ({ item }) => {
             <Card.Body>
                 <Card.Title>{item.name}</Card.Title>
                 <Card.Text>{item.description}</Card.Text>
+                <Card.Text>${item.price}ARS</Card.Text>
                 {
                 item.stock === 0 ? <p>Lo sentimos, no hay stock disponible</p> : 
                 itemCount===0

@@ -4,13 +4,26 @@ import CartItem from "./CartItem";
 import { Button } from "react-bootstrap";
 
  const Cart = () => {
-    const {cartList,clearCart} = useContext(CartContext)
-    const localClearCart=()=>{clearCart()}
+    const {cartList,
+        clearCart,
+        calcsubtotal,
+        calcimpuestos,
+        calcTotalFinal,
+        } = useContext(CartContext)
+    
+const localClearCart=()=>{clearCart()}
     return (
         <>
-            <h1>This is your cart!</h1>
-            <span><Button onClick={localClearCart}>Limpiar Carrito</Button></span>
+            <h2 className="h4">Subtotal: {calcsubtotal()}</h2>
+            <h2 className="h4">Impuestos: {calcimpuestos()}</h2>
+            <h2 className="h2">TOTAL: {calcTotalFinal()}</h2>
+            <p><Button onClick={localClearCart}>Limpiar Carrito</Button></p>
             <CartItem Item={cartList}></CartItem>
+            <br/>
+
+                       
+                
+            
         </>
     );
 }
