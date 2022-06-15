@@ -1,8 +1,10 @@
 //componente contenedor de item
 import {  useState , useEffect} from 'react';
-import { miPromesa } from "../mocks/productos.js";
 import ItemDetail from "./ItemDetail.jsx";
 import { useParams } from "react-router-dom";
+import db from "../utils/firebaseConfig"
+import { doc, getDoc} from 'firebase/firestore';
+
 
 const ItemDetailContainer = () => {
     
@@ -10,12 +12,18 @@ const ItemDetailContainer = () => {
     const [miError,setmiError] = useState(null)
     const {id} = useParams();
     
-    useEffect(()=>{
-        miPromesa
-        .then((res)=> id ? setmiProducto(res.find(item=>item.id===parseInt(id))):setmiProducto(res))
+
+    useEffect(() => {
+        const ref = doc(db, 'productos', id);
+        getDoc(ref).then((snapshot) => {
+            setmiProducto({
+                id: snapshot.id,
+                ...snapshot.data(),
+            })
+        })
         .catch(()=>setmiError(true))
-    },[]
-    )
+    }, [id]);
+
 
         return (
             <>
